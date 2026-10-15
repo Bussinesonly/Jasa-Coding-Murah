@@ -24,7 +24,18 @@ export const Contact = () => {
 
   const copyPhoneNumber = async () => {
     try {
-      await navigator.clipboard.writeText(displayPhone)
+      if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(displayPhone)
+      } else {
+        const textarea = document.createElement('textarea')
+        textarea.value = displayPhone
+        textarea.style.position = 'fixed'
+        textarea.style.opacity = '0'
+        document.body.appendChild(textarea)
+        textarea.select()
+        document.execCommand('copy')
+        document.body.removeChild(textarea)
+      }
       setCopied(true)
       showToast('Nomor WhatsApp berhasil disalin ke clipboard!')
       setTimeout(() => setCopied(false), 2500)

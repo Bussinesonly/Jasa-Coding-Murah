@@ -6,8 +6,8 @@ export const CustomCursor = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [isTouchDevice] = useState(() => {
     if (typeof window === 'undefined') return true
-    const hasFinePointer = window.matchMedia('(pointer: fine)').matches
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const hasFinePointer = typeof window.matchMedia === 'function' ? window.matchMedia('(pointer: fine)').matches : false
+    const prefersReducedMotion = typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false
     return !hasFinePointer || prefersReducedMotion
   })
 

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useCallback } from 'react'
+import React, { createContext, useContext, useState, useCallback } from 'react'
 import { CheckCircle2, X } from 'lucide-react'
 
 export interface ToastContextType {
@@ -42,4 +42,10 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   )
 }
 
-export { useToast } from './useToast'
+export const useToast = (): ToastContextType => {
+  const context = useContext(ToastContext)
+  if (!context) {
+    throw new Error('useToast must be used within ToastProvider')
+  }
+  return context
+}

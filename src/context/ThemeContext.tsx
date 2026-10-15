@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useState } from 'react'
 
 type Theme = 'dark' | 'light'
 
@@ -18,7 +18,6 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
         return savedTheme
       }
     }
-    // Default to dark mode as requested
     return 'dark'
   })
 
@@ -49,4 +48,10 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   )
 }
 
-export { useTheme } from './useTheme'
+export const useTheme = (): ThemeContextType => {
+  const context = useContext(ThemeContext)
+  if (!context) {
+    throw new Error('useTheme must be used within a ThemeProvider')
+  }
+  return context
+}
