@@ -62,7 +62,7 @@ export const Contact = () => {
   return (
     <section id="kontak" className="py-24 sm:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
             Mulai Diskusi
           </span>
@@ -74,7 +74,7 @@ export const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto" data-aos="fade-up" data-aos-delay="80">
           {/* Left Column: Official Direct Channels */}
           <div className="lg:col-span-5 space-y-4">
             {/* Primary Channel: WhatsApp */}

@@ -15,6 +15,16 @@ import { ScrollProgress } from './components/ScrollProgress'
 import { ToastProvider } from './components/Toast'
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 560,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 72,
+      disable: () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    })
+  }, [])
+
   return (
     <ToastProvider>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white transition-colors duration-200">
@@ -42,3 +52,6 @@ function App() {
 }
 
 export default App
+import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'

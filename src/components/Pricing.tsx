@@ -25,7 +25,7 @@ export const Pricing = () => {
   return (
     <section id="biaya" className="py-24 sm:py-32 bg-slate-50/50 dark:bg-slate-950/40 border-y border-slate-200/80 dark:border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto text-center mb-16">
+        <div className="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
             Transparansi Biaya
           </span>
@@ -38,7 +38,7 @@ export const Pricing = () => {
         </div>
 
         {/* Pricing Guidance Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="80">
           {pricingFactors.map((tier, idx) => (
             <div
               key={idx}

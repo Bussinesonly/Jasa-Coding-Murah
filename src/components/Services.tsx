@@ -28,7 +28,7 @@ export const Services = () => {
     <section id="layanan" className="py-24 sm:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-16" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 text-xs font-mono font-semibold uppercase tracking-wider mb-4">
             Layanan Unggulan
           </div>
@@ -41,7 +41,7 @@ export const Services = () => {
         </div>
 
         {/* Asymmetrical Interactive Services Explorer */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start" data-aos="fade-up" data-aos-delay="80">
           {/* Service Selector List (Left 5 cols) */}
           <div className="lg:col-span-5 space-y-3">
             {servicesData.map((service) => {

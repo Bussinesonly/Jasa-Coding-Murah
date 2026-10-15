@@ -11,7 +11,7 @@ export const About = () => {
   return (
     <section id="tentang" className="py-24 sm:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center" data-aos="fade-up">
           {/* Left Text Column */}
           <div className="lg:col-span-7">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">

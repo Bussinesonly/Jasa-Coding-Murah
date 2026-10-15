@@ -45,7 +45,7 @@ export const Hero = () => {
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto" data-aos="fade-up">
           {/* Studio Tagline Pill */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-300 mb-6 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -96,6 +96,8 @@ export const Hero = () => {
         {/* Hero Digital Product Mockup with Micro-interaction Tilt */}
         <div
           ref={containerRef}
+          data-aos="fade-up"
+          data-aos-delay="120"
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
           className="mt-14 sm:mt-18 max-w-5xl mx-auto perspective-1000 transition-transform duration-200 ease-out"

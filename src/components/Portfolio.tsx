@@ -28,7 +28,7 @@ export const Portfolio = () => {
     <section id="portfolio" className="py-24 sm:py-32 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16" data-aos="fade-up">
           <div className="max-w-2xl">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
               Karya & Studi Kasus
@@ -47,7 +47,7 @@ export const Portfolio = () => {
         </div>
 
         {/* Agency-style Asymmetrical Projects Grid - NOT uniform 3x3 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8" data-aos="fade-up" data-aos-delay="80">
           {/* Project 1: Large Featured Card (Full 12 cols on mobile, 7 cols on desktop) */}
           <div className="lg:col-span-7">
             <ProjectCard

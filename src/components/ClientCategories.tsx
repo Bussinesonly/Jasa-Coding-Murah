@@ -50,7 +50,7 @@ export const ClientCategories = () => {
   return (
     <section className="py-14 border-y border-slate-200/80 dark:border-white/5 bg-slate-50/50 dark:bg-slate-950/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8" data-aos="fade-up">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold">
               Klien & Sektor
@@ -65,7 +65,7 @@ export const ClientCategories = () => {
         </div>
 
         {/* Editorial Typography Grid - NOT 6 large uniform cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" data-aos="fade-up" data-aos-delay="80">
           {clientCategories.map((cat, idx) => {
             const Icon = cat.icon
 

@@ -47,7 +47,7 @@ export const Benefits = () => {
   return (
     <section className="py-24 sm:py-32 bg-slate-100/60 dark:bg-slate-900/30 border-y border-slate-200/80 dark:border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl mb-16" data-aos="fade-up">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
             Standar Kualitas Teknis
           </span>
@@ -60,7 +60,7 @@ export const Benefits = () => {
         </div>
 
         {/* Varied Grid Layout for 5 Benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="80">
           {benefits.map((b, i) => {
             const Icon = b.icon
             const isWide = i === 0 || i === 3

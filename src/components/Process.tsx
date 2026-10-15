@@ -26,7 +26,7 @@ export const Process = () => {
   return (
     <section id="proses" className="py-24 sm:py-32 bg-slate-50/50 dark:bg-slate-950/40 border-y border-slate-200/80 dark:border-white/5 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-2xl mb-16">
+        <div className="max-w-2xl mb-16" data-aos="fade-up">
           <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
             Alur Pengerjaan Transparan
           </span>
@@ -39,7 +39,7 @@ export const Process = () => {
         </div>
 
         {/* Interactive Timeline Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative" data-aos="fade-up" data-aos-delay="80">
           {processSteps.map((step, idx) => {
             const Icon = stepIcons[idx] || Code2
             const isCurrent = activeStep === idx
