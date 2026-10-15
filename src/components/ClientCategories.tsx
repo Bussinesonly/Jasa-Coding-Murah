@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {
   Store,
   Briefcase,
@@ -48,8 +47,6 @@ const clientCategories = [
 ]
 
 export const ClientCategories = () => {
-  const [activeCategory, setActiveCategory] = useState<number | null>(null)
-
   return (
     <section className="py-14 border-y border-slate-200/80 dark:border-white/5 bg-slate-50/50 dark:bg-slate-950/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,18 +68,11 @@ export const ClientCategories = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {clientCategories.map((cat, idx) => {
             const Icon = cat.icon
-            const isSelected = activeCategory === idx
 
             return (
               <div
                 key={cat.name}
-                onMouseEnter={() => setActiveCategory(idx)}
-                onMouseLeave={() => setActiveCategory(null)}
-                className={`group p-4 rounded-xl border transition-all duration-200 cursor-default flex flex-col justify-between ${
-                  isSelected
-                    ? 'border-blue-500/50 bg-blue-50/40 dark:bg-blue-950/20 shadow-sm'
-                    : 'border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 hover:border-slate-300 dark:hover:border-slate-700'
-                }`}
+                className="group p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 transition-colors duration-200 flex flex-col justify-between hover:border-blue-500/50 hover:bg-blue-50/40 dark:hover:bg-blue-950/20"
               >
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-mono text-slate-400">0{idx + 1}</span>

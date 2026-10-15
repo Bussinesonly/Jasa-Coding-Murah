@@ -121,7 +121,7 @@ export const Hero = () => {
               {/* Performance Indicator */}
               <div className="flex items-center gap-1.5 text-[11px] font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 px-2.5 py-0.5 rounded-full">
                 <Zap className="w-3 h-3" />
-                <span>99/100 LCP 0.4s</span>
+                <span>Siap untuk ditinjau</span>
               </div>
             </div>
 
@@ -153,10 +153,10 @@ export const Hero = () => {
 
                   <div className="pt-4 border-t border-slate-800/80">
                     <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800 text-[11px] text-slate-400">
-                      <div className="text-white font-medium mb-1">Status Server</div>
+                      <div className="text-white font-medium mb-1">Status Proyek</div>
                       <div className="flex items-center gap-1.5 text-emerald-400">
                         <CheckCircle className="w-3 h-3" />
-                        <span>Operasional Normal (100%)</span>
+                        <span>Siap untuk ditinjau</span>
                       </div>
                     </div>
                   </div>
@@ -167,25 +167,25 @@ export const Hero = () => {
                   {/* Top Stats Cards */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                     <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/90">
-                      <div className="text-[11px] text-slate-400 uppercase font-mono">Waktu Respon</div>
+                      <div className="text-[11px] text-slate-400 uppercase font-mono">Prioritas</div>
                       <div className="text-lg sm:text-xl font-bold text-white mt-1 flex items-center gap-2">
-                        <span>42 ms</span>
-                        <span className="text-[10px] text-emerald-400 font-normal">Super Cepat</span>
+                        <span>Responsif</span>
+                        <span className="text-[10px] text-emerald-400 font-normal">Untuk pengguna</span>
                       </div>
                     </div>
 
                     <div className="p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/90">
                       <div className="text-[11px] text-slate-400 uppercase font-mono">Arsitektur</div>
                       <div className="text-lg sm:text-xl font-bold text-white mt-1">
-                        100% Kustom
+                        Dirancang khusus
                       </div>
                     </div>
 
                     <div className="col-span-2 sm:col-span-1 p-3.5 rounded-xl bg-slate-950/70 border border-slate-800/90">
-                      <div className="text-[11px] text-slate-400 uppercase font-mono">Skor Optimasi</div>
+                      <div className="text-[11px] text-slate-400 uppercase font-mono">Pengujian</div>
                       <div className="text-lg sm:text-xl font-bold text-blue-400 mt-1 flex items-center gap-1.5">
                         <Gauge className="w-4 h-4 text-blue-400" />
-                        <span>A+ Grade</span>
+                        <span>Siap diuji</span>
                       </div>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ export const Hero = () => {
                         {`,\n  architecture: `}
                         <span className="text-emerald-300">'Modular & Scalable'</span>
                         {`,\n  support: `}
-                        <span className="text-emerald-300">'24/7 Dedikasi Penuh'</span>
+                        <span className="text-emerald-300">'Pendampingan proyek'</span>
                         {`\n})`}
                       </code>
                     </pre>

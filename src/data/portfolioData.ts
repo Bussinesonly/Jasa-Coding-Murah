@@ -10,13 +10,13 @@ export const portfolioProjects: PortfolioProject[] = [
     clientType: 'Korporasi & Bisnis Layanan',
     features: [
       'Struktur konten editorial yang meningkatkan otoritas brand',
-      'Skor Google Lighthouse 98/100 pada uji kecepatan mobile',
+      'Struktur halaman yang dioptimalkan untuk pengalaman mobile',
       'CMS mandiri untuk publikasi artikel dan studi kasus',
       'Integrasi formulir pesan cepat terhubung WhatsApp resmi'
     ],
     techStack: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
-    highlightMetric: '98/100',
-    highlightLabel: 'Skor Lighthouse Mobile',
+    highlightMetric: 'Mobile-first',
+    highlightLabel: 'Fokus Produk',
     livePreviewType: 'business',
     accentColor: '#3B82F6'
   },
@@ -34,8 +34,8 @@ export const portfolioProjects: PortfolioProject[] = [
       'Hak akses berjenjang dengan autentikasi aman'
     ],
     techStack: ['React', 'TypeScript', 'Node.js', 'PostgreSQL'],
-    highlightMetric: '1,200+',
-    highlightLabel: 'Pendaftar PPDB Terverifikasi',
+    highlightMetric: 'Alur terpusat',
+    highlightLabel: 'Fokus Produk',
     livePreviewType: 'school',
     accentColor: '#06B6D4'
   },
@@ -53,8 +53,8 @@ export const portfolioProjects: PortfolioProject[] = [
       'Konfirmasi pesanan instan ke WhatsApp pelanggan dan admin'
     ],
     techStack: ['React', 'Next.js', 'Tailwind CSS', 'Midtrans API'],
-    highlightMetric: '3.4x',
-    highlightLabel: 'Kenaikan Pemesanan Langsung',
+    highlightMetric: 'Penjualan langsung',
+    highlightLabel: 'Fokus Produk',
     livePreviewType: 'ecommerce',
     accentColor: '#10B981'
   },
@@ -72,8 +72,8 @@ export const portfolioProjects: PortfolioProject[] = [
       'Ekspor laporan keuangan dan inventaris dalam format Excel dan PDF'
     ],
     techStack: ['React', 'TypeScript', 'Tailwind CSS', 'REST API'],
-    highlightMetric: '0.4s',
-    highlightLabel: 'Kecepatan Query Data',
+    highlightMetric: 'Data operasional',
+    highlightLabel: 'Fokus Produk',
     livePreviewType: 'dashboard',
     accentColor: '#8B5CF6'
   }

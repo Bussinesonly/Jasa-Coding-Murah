@@ -45,11 +45,12 @@ export const Process = () => {
             const isCurrent = activeStep === idx
 
             return (
-              <div
+              <button
                 key={step.number}
+                type="button"
                 onClick={() => setActiveStep(idx)}
-                onMouseEnter={() => setActiveStep(idx)}
-                className={`p-7 rounded-3xl border transition-all duration-300 cursor-pointer flex flex-col justify-between group ${
+                aria-pressed={isCurrent}
+                className={`w-full p-7 rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between group ${
                   isCurrent
                     ? 'border-blue-500 bg-white dark:bg-slate-900 shadow-xl shadow-blue-600/10 -translate-y-1'
                     : 'border-slate-200 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/40 hover:border-slate-300 dark:hover:border-slate-700'
@@ -96,7 +97,7 @@ export const Process = () => {
                     <span className="line-clamp-2">{step.deliverables}</span>
                   </div>
                 </div>
-              </div>
+              </button>
             )
           })}
         </div>

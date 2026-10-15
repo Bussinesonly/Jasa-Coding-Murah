@@ -67,6 +67,6 @@ export const servicesData: ServiceItem[] = [
     ],
     techStack: ['Tailored Architecture', 'TypeScript', 'Custom Database', 'Cloud Server'],
     idealFor: 'Instansi pemerintah, institusi pendidikan, dan bisnis dengan workflow khusus',
-    badge: '100% Kustom'
+    badge: 'Kustom'
   }
 ]

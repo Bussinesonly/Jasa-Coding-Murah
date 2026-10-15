@@ -52,8 +52,7 @@ export const Services = () => {
                 <button
                   key={service.id}
                   onClick={() => setActiveServiceId(service.id)}
-                  onMouseEnter={() => setActiveServiceId(service.id)}
-                  className={`w-full text-left p-5 sm:p-6 rounded-2xl border transition-all duration-200 relative group flex items-start justify-between ${
+                  className={`w-full text-left p-5 sm:p-6 rounded-2xl border transition-all duration-200 relative group flex items-start justify-between focus-visible:translate-x-1 ${
                     isSelected
                       ? 'bg-blue-600 dark:bg-blue-600 text-white border-blue-500 shadow-xl shadow-blue-600/20 translate-x-1'
                       : 'bg-white dark:bg-slate-900/70 text-slate-800 dark:text-slate-200 border-slate-200 dark:border-slate-800/90 hover:border-slate-300 dark:hover:border-slate-700'

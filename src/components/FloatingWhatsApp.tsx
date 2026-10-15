@@ -26,6 +26,8 @@ export const FloatingWhatsApp = () => {
         rel="noopener noreferrer"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onFocus={() => setIsHovered(true)}
+        onBlur={() => setIsHovered(false)}
         className="relative group w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-xl shadow-emerald-500/30 transition-all duration-300 hover:scale-105 active:scale-95 focus-visible:ring-4 focus-visible:ring-emerald-400"
         aria-label="Konsultasi via WhatsApp resmi Jasa Coding"
       >

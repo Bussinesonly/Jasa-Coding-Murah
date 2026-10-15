@@ -1,10 +1,10 @@
 import { CheckCircle2 } from 'lucide-react'
 
 const stats = [
-  { value: '10+', label: 'Project Terselesaikan', note: 'Bisnis, UMKM & Sekolah' },
+  { value: 'Beragam', label: 'Kebutuhan Digital', note: 'Bisnis, UMKM & Sekolah' },
   { value: '5+', label: 'Jenis Solusi Digital', note: 'Web, App, Sistem Informasi' },
-  { value: '100%', label: 'Kustom & Orisinal', note: 'Bukan template generator' },
-  { value: '24/7', label: 'Dukungan Konsultasi', note: 'Responsif via WhatsApp' },
+  { value: 'Kustom', label: 'Pendekatan Proyek', note: 'Disesuaikan dengan kebutuhan' },
+  { value: 'Terarah', label: 'Dukungan Konsultasi', note: 'Melalui WhatsApp' },
 ]
 
 export const About = () => {

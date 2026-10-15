@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { portfolioProjects } from '../data/portfolioData'
 import type { PortfolioProject } from '../types'
 import { ProjectModal } from './ProjectModal'
@@ -12,6 +12,17 @@ import {
 
 export const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<PortfolioProject | null>(null)
+  const lastTriggerRef = useRef<HTMLButtonElement | null>(null)
+
+  const openProject = (project: PortfolioProject, trigger: HTMLButtonElement) => {
+    lastTriggerRef.current = trigger
+    setSelectedProject(project)
+  }
+
+  const closeProject = () => {
+    setSelectedProject(null)
+    window.requestAnimationFrame(() => lastTriggerRef.current?.focus())
+  }
 
   return (
     <section id="portfolio" className="py-24 sm:py-32 relative">
@@ -31,7 +42,7 @@ export const Portfolio = () => {
           </div>
 
           <div className="text-xs font-mono text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 px-3.5 py-2 rounded-lg bg-slate-50 dark:bg-slate-900/50">
-            Arsitektur Kustom • Zero AI-Slop
+            Arsitektur kustom untuk kebutuhan Anda
           </div>
         </div>
 
@@ -41,7 +52,7 @@ export const Portfolio = () => {
           <div className="lg:col-span-7">
             <ProjectCard
               project={portfolioProjects[0]}
-              onSelect={() => setSelectedProject(portfolioProjects[0])}
+              onSelect={(trigger) => openProject(portfolioProjects[0], trigger)}
               featured={true}
             />
           </div>
@@ -50,7 +61,7 @@ export const Portfolio = () => {
           <div className="lg:col-span-5">
             <ProjectCard
               project={portfolioProjects[1]}
-              onSelect={() => setSelectedProject(portfolioProjects[1])}
+              onSelect={(trigger) => openProject(portfolioProjects[1], trigger)}
             />
           </div>
 
@@ -58,7 +69,7 @@ export const Portfolio = () => {
           <div className="lg:col-span-5">
             <ProjectCard
               project={portfolioProjects[2]}
-              onSelect={() => setSelectedProject(portfolioProjects[2])}
+              onSelect={(trigger) => openProject(portfolioProjects[2], trigger)}
             />
           </div>
 
@@ -66,7 +77,7 @@ export const Portfolio = () => {
           <div className="lg:col-span-7">
             <ProjectCard
               project={portfolioProjects[3]}
-              onSelect={() => setSelectedProject(portfolioProjects[3])}
+              onSelect={(trigger) => openProject(portfolioProjects[3], trigger)}
               featured={true}
             />
           </div>
@@ -76,7 +87,7 @@ export const Portfolio = () => {
       {/* Project Modal Dialog */}
       <ProjectModal
         project={selectedProject}
-        onClose={() => setSelectedProject(null)}
+        onClose={closeProject}
       />
     </section>
   )
@@ -84,15 +95,14 @@ export const Portfolio = () => {
 
 interface ProjectCardProps {
   project: PortfolioProject
-  onSelect: () => void
+  onSelect: (trigger: HTMLButtonElement) => void
   featured?: boolean
 }
 
 const ProjectCard = ({ project, onSelect, featured = false }: ProjectCardProps) => {
   return (
-    <div
-      onClick={onSelect}
-      className={`group relative rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/60 overflow-hidden hover:border-blue-500/50 transition-all duration-300 cursor-pointer flex flex-col justify-between shadow-sm hover:shadow-xl ${
+    <article
+      className={`group relative rounded-3xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/60 overflow-hidden hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-xl ${
         featured ? 'ring-1 ring-blue-500/10' : ''
       }`}
     >
@@ -137,7 +147,7 @@ const ProjectCard = ({ project, onSelect, featured = false }: ProjectCardProps) 
                     <LayoutDashboard className="w-4 h-4 text-purple-400" />
                   )}
                   <span className="text-xs font-mono text-slate-400">
-                    Live Digital Product
+                    Pratinjau Studi Kasus
                   </span>
                 </div>
                 <div className="text-white font-bold text-sm sm:text-base">
@@ -202,13 +212,15 @@ const ProjectCard = ({ project, onSelect, featured = false }: ProjectCardProps) 
 
           <button
             type="button"
+            onClick={(event) => onSelect(event.currentTarget)}
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 group-hover:text-blue-500 transition-colors"
+            aria-label={`Lihat detail ${project.title}`}
           >
             <span>Lihat Project</span>
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
         </div>
       </div>
-    </div>
+    </article>
   )
 }

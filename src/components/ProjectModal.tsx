@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import type { PortfolioProject } from '../types'
 import {
   X,
@@ -17,6 +17,9 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
+  const dialogRef = useRef<HTMLDivElement>(null)
+  const closeButtonRef = useRef<HTMLButtonElement>(null)
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -26,12 +29,32 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     if (project) {
       document.body.style.overflow = 'hidden'
       window.addEventListener('keydown', handleKeyDown)
+      closeButtonRef.current?.focus()
     }
     return () => {
       document.body.style.overflow = 'unset'
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [project, onClose])
+
+  const trapFocus = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key !== 'Tab' || !dialogRef.current) return
+    const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    )
+    const elements = Array.from(focusable)
+    const first = elements[0]
+    const last = elements.at(-1)
+    if (!first || !last) return
+
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault()
+      last.focus()
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault()
+      first.focus()
+    }
+  }
 
   if (!project) return null
 
@@ -49,11 +72,14 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       aria-labelledby="modal-project-title"
     >
       <div
+        ref={dialogRef}
         className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-6 sm:p-8 animate-in zoom-in-95 duration-200"
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={trapFocus}
       >
         {/* Close Button */}
         <button
+          ref={closeButtonRef}
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-full text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-blue-500"
           aria-label="Tutup detail project"
@@ -86,7 +112,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             </div>
             <div className="flex items-center gap-1 text-[11px]">
               <ShieldCheck className="w-3 h-3 text-emerald-400" />
-              <span>https://preview.jasacoding.com/{project.id}</span>
+              <span>studi-kasus/{project.id}</span>
             </div>
             <div className="flex items-center gap-1 text-emerald-400 text-[10px]">
               <Zap className="w-3 h-3" />
