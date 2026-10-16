@@ -65,13 +65,16 @@ export const ClientCategories = () => {
         </div>
 
         {/* Editorial Typography Grid - NOT 6 large uniform cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3" data-aos="fade-up" data-aos-delay="80">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {clientCategories.map((cat, idx) => {
             const Icon = cat.icon
 
             return (
               <div
                 key={cat.name}
+                data-aos="fade-up"
+                data-aos-delay={idx * 60}
+                data-aos-duration="420"
                 className="group p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 transition-colors duration-200 flex flex-col justify-between hover:border-blue-500/50 hover:bg-blue-50/40 dark:hover:bg-blue-950/20"
               >
                 <div className="flex items-center justify-between mb-3">

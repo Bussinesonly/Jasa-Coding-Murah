@@ -38,10 +38,13 @@ export const Pricing = () => {
         </div>
 
         {/* Pricing Guidance Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="80">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
           {pricingFactors.map((tier, idx) => (
             <div
               key={idx}
+              data-aos="fade-up"
+              data-aos-delay={idx * 90}
+              data-aos-duration="500"
               className="p-7 rounded-3xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 shadow-sm flex flex-col justify-between"
             >
               <div>
@@ -82,7 +85,11 @@ export const Pricing = () => {
         </div>
 
         {/* Central CTA Banner */}
-        <div className="max-w-2xl mx-auto text-center p-8 rounded-3xl bg-blue-600 text-white shadow-xl shadow-blue-600/20">
+        <div
+          className="max-w-2xl mx-auto text-center p-8 rounded-3xl bg-blue-600 text-white shadow-xl shadow-blue-600/20"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <h3 className="text-xl sm:text-2xl font-bold tracking-tight">
             Ingin estimasi akurat untuk ide Anda?
           </h3>

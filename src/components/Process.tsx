@@ -39,7 +39,7 @@ export const Process = () => {
         </div>
 
         {/* Interactive Timeline Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative" data-aos="fade-up" data-aos-delay="80">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative">
           {processSteps.map((step, idx) => {
             const Icon = stepIcons[idx] || Code2
             const isCurrent = activeStep === idx
@@ -50,6 +50,9 @@ export const Process = () => {
                 type="button"
                 onClick={() => setActiveStep(idx)}
                 aria-pressed={isCurrent}
+                data-aos="fade-up"
+                data-aos-delay={(idx % 3) * 90}
+                data-aos-duration="500"
                 className={`w-full p-7 rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between group ${
                   isCurrent
                     ? 'border-blue-500 bg-white dark:bg-slate-900 shadow-xl shadow-blue-600/10 -translate-y-1'
