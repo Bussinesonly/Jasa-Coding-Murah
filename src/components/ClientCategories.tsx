@@ -73,8 +73,8 @@ export const ClientCategories = () => {
               <div
                 key={cat.name}
                 data-aos="fade-up"
-                data-aos-delay={idx * 60}
-                data-aos-duration="420"
+                data-aos-delay={idx * 100}
+                data-aos-duration="650"
                 className="group p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/60 transition-colors duration-200 flex flex-col justify-between hover:border-blue-500/50 hover:bg-blue-50/40 dark:hover:bg-blue-950/20"
               >
                 <div className="flex items-center justify-between mb-3">

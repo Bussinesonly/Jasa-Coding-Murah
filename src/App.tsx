@@ -20,7 +20,7 @@ import { ToastProvider } from './components/Toast'
 function App() {
   useEffect(() => {
     AOS.init({
-      duration: 560,
+      duration: 800,
       easing: 'ease-out-cubic',
       once: true,
       offset: 72,

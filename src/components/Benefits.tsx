@@ -69,8 +69,8 @@ export const Benefits = () => {
               <div
                 key={b.title}
                 data-aos="fade-up"
-                data-aos-delay={i * 70}
-                data-aos-duration="500"
+                data-aos-delay={i * 100}
+                data-aos-duration="700"
                 className={`p-7 rounded-2xl border border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-900/70 hover:border-slate-300 dark:hover:border-slate-700 transition-all duration-200 flex flex-col justify-between group ${
                   isWide ? 'lg:col-span-1' : ''
                 }`}

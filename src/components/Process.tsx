@@ -51,8 +51,8 @@ export const Process = () => {
                 onClick={() => setActiveStep(idx)}
                 aria-pressed={isCurrent}
                 data-aos="fade-up"
-                data-aos-delay={(idx % 3) * 90}
-                data-aos-duration="500"
+                data-aos-delay={(idx % 3) * 100}
+                data-aos-duration="700"
                 className={`w-full p-7 rounded-3xl border transition-all duration-300 cursor-pointer text-left flex flex-col justify-between group ${
                   isCurrent
                     ? 'border-blue-500 bg-white dark:bg-slate-900 shadow-xl shadow-blue-600/10 -translate-y-1'
