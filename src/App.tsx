@@ -1,3 +1,6 @@
+import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { ClientCategories } from './components/ClientCategories'
@@ -52,6 +55,3 @@ function App() {
 }
 
 export default App
-import { useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
