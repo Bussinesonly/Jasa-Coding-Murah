@@ -65,7 +65,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-950/80 backdrop-blur-md ui-fade-in"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -73,7 +73,7 @@ export const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
     >
       <div
         ref={dialogRef}
-        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-6 sm:p-8 animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-2xl p-6 sm:p-8 ui-zoom-in"
         onClick={(e) => e.stopPropagation()}
         onKeyDown={trapFocus}
       >

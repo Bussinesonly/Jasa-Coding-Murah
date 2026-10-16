@@ -172,11 +172,11 @@ export const Navbar = () => {
       {/* Mobile Drawer Menu */}
       {isMobileOpen && (
         <div
-          className="fixed inset-0 top-[65px] z-40 bg-slate-950/70 backdrop-blur-sm md:hidden animate-in fade-in duration-200"
+          className="fixed inset-0 top-[65px] z-40 bg-slate-950/70 backdrop-blur-sm md:hidden ui-fade-in"
           onClick={() => setIsMobileOpen(false)}
         >
           <div
-            className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-6 shadow-xl flex flex-col gap-4 animate-in slide-in-from-top-4 duration-200"
+            className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 p-6 shadow-xl flex flex-col gap-4 ui-slide-in-from-top"
             onClick={(e) => e.stopPropagation()}
           >
             <nav className="flex flex-col gap-2" aria-label="Menu Mobile">
