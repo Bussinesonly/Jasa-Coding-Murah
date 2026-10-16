@@ -7,7 +7,7 @@ import {
   ExternalLink,
   Sparkles,
 } from 'lucide-react'
-import { useToast } from './Toast'
+import { useToast } from './useToast'
 
 export const Contact = () => {
   const { showToast } = useToast()

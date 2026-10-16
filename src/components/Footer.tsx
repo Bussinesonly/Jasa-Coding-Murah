@@ -38,10 +38,10 @@ export const Footer = () => {
                 Navigasi
               </div>
               <ul className="space-y-2">
-                <li><a href="#hero" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Home</a></li>
-                <li><a href="#layanan" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Layanan</a></li>
-                <li><a href="#portfolio" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Portfolio</a></li>
-                <li><a href="#proses" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Proses</a></li>
+                <li><a href="#/" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Home</a></li>
+                <li><a href="#/layanan" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Layanan</a></li>
+                <li><a href="#/portofolio" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Portfolio</a></li>
+                <li><a href="#/proses" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Proses</a></li>
               </ul>
             </div>
 
@@ -50,9 +50,9 @@ export const Footer = () => {
                 Informasi
               </div>
               <ul className="space-y-2">
-                <li><a href="#tentang" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Tentang Kami</a></li>
-                <li><a href="#biaya" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Estimasi Biaya</a></li>
-                <li><a href="#kontak" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Kontak Kami</a></li>
+                <li><a href="#/tentang" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Tentang Kami</a></li>
+                <li><a href="#/biaya" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Estimasi Biaya</a></li>
+                <li><a href="#/kontak" className="text-slate-600 dark:text-slate-300 hover:text-blue-500 transition-colors">Kontak Kami</a></li>
               </ul>
             </div>
 

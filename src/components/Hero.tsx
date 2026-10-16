@@ -65,7 +65,7 @@ export const Hero = () => {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-10">
             <a
-              href="#kontak"
+              href="#/kontak"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base shadow-lg shadow-blue-600/25 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>Mulai Konsultasi</span>
@@ -73,7 +73,7 @@ export const Hero = () => {
             </a>
 
             <a
-              href="#portfolio"
+              href="#/portofolio"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-900 dark:text-white font-semibold text-base border border-slate-200 dark:border-slate-800 transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
             >
               <FolderGit2 className="w-4 h-4 text-slate-500 dark:text-slate-400" />

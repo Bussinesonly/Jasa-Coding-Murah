@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Sun, Moon, ArrowUpRight, Code2 } from 'lucide-react'
-import { useTheme } from '../context/ThemeContext'
+import { useTheme } from '../context/useTheme'
 
 const navLinks = [
-  { name: 'Home', href: '#hero' },
-  { name: 'Layanan', href: '#layanan' },
-  { name: 'Portfolio', href: '#portfolio' },
-  { name: 'Proses', href: '#proses' },
-  { name: 'Tentang', href: '#tentang' },
-  { name: 'Biaya', href: '#biaya' },
-  { name: 'Kontak', href: '#kontak' },
+  { name: 'Home', href: '#/' },
+  { name: 'Layanan', href: '#/layanan' },
+  { name: 'Portfolio', href: '#/portofolio' },
+  { name: 'Proses', href: '#/proses' },
+  { name: 'Tentang', href: '#/tentang' },
+  { name: 'Biaya', href: '#/biaya' },
+  { name: 'Kontak', href: '#/kontak' },
 ]
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileOpen, setIsMobileOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState('hero')
   const { theme, toggleTheme } = useTheme()
+  const activePath = window.location.hash || '#/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,21 +24,6 @@ export const Navbar = () => {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
-      }
-
-      // Track active section for indicator
-      const sections = ['hero', 'layanan', 'portfolio', 'proses', 'tentang', 'biaya', 'kontak']
-      const scrollPos = window.scrollY + 200
-      for (const section of sections) {
-        const el = document.getElementById(section)
-        if (el) {
-          const top = el.offsetTop
-          const height = el.offsetHeight
-          if (scrollPos >= top && scrollPos < top + height) {
-            setActiveSection(section)
-            break
-          }
-        }
       }
     }
 
@@ -78,7 +63,7 @@ export const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo & Brand */}
           <a
-            href="#hero"
+            href="#/"
             className="flex items-center gap-2.5 group focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg p-1"
             aria-label="Jasa Coding - Halaman Utama"
           >
@@ -98,7 +83,7 @@ export const Navbar = () => {
           {/* Desktop Navigation Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Menu Utama">
             {navLinks.map((link) => {
-              const isActive = activeSection === link.href.replace('#', '')
+              const isActive = activePath === link.href
               return (
                 <a
                   key={link.name}
@@ -136,7 +121,7 @@ export const Navbar = () => {
 
             {/* Primary CTA */}
             <a
-              href="#kontak"
+              href="#/kontak"
               className="inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white shadow-sm shadow-blue-600/25 transition-all duration-200 active:scale-98"
             >
               <span>Konsultasi Gratis</span>
@@ -195,7 +180,7 @@ export const Navbar = () => {
 
             <div className="pt-2 border-t border-slate-200 dark:border-slate-800">
               <a
-                href="#kontak"
+                href="#/kontak"
                 onClick={() => setIsMobileOpen(false)}
                 className="w-full py-3 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-center flex items-center justify-center gap-2 shadow-md shadow-blue-600/30 transition-colors"
               >

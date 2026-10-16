@@ -31,7 +31,7 @@ try {
 
 try {
   console.log('Testing App render...')
-  const App = await import('../dist/assets/index-oAEMLxae.js')
+  await import('../dist/assets/index-oAEMLxae.js')
   console.log('App loaded without throwing error!')
 } catch (e) {
   console.error('CRASH DETECTED:', e)

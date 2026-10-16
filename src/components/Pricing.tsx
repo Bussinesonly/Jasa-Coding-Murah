@@ -73,7 +73,7 @@ export const Pricing = () => {
 
               <div className="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800/80">
                 <a
-                  href="#kontak"
+                  href="#/kontak"
                   className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-blue-500 text-xs font-semibold text-slate-800 dark:text-slate-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                 >
                   <span>Minta Rincian Biaya</span>
@@ -98,7 +98,7 @@ export const Pricing = () => {
           </p>
           <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
-              href="#kontak"
+              href="#/kontak"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-blue-600 hover:bg-blue-50 font-semibold text-sm transition-colors shadow-sm"
             >
               <span>Konsultasi untuk Estimasi</span>

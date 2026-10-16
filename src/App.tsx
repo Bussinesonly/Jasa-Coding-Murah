@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import { Navbar } from './components/Navbar'
@@ -18,6 +18,8 @@ import { ScrollProgress } from './components/ScrollProgress'
 import { ToastProvider } from './components/Toast'
 
 function App() {
+  const [route, setRoute] = useState(() => window.location.hash.slice(1) || '/')
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -28,6 +30,37 @@ function App() {
     })
   }, [])
 
+  useEffect(() => {
+    const handleHashChange = () => setRoute(window.location.hash.slice(1) || '/')
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' })
+    const refreshAos = window.setTimeout(() => AOS.refreshHard(), 0)
+    return () => window.clearTimeout(refreshAos)
+  }, [route])
+
+  const renderPage = () => {
+    switch (route) {
+      case '/layanan':
+        return <><Services /><Benefits /></>
+      case '/portofolio':
+        return <Portfolio />
+      case '/proses':
+        return <Process />
+      case '/tentang':
+        return <About />
+      case '/biaya':
+        return <Pricing />
+      case '/kontak':
+        return <Contact />
+      default:
+        return <><Hero /><ClientCategories /></>
+    }
+  }
+
   return (
     <ToastProvider>
       <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-blue-600 selection:text-white transition-colors duration-200">
@@ -36,15 +69,7 @@ function App() {
         <Navbar />
 
         <main id="main-content">
-          <Hero />
-          <ClientCategories />
-          <Services />
-          <Benefits />
-          <Portfolio />
-          <Process />
-          <About />
-          <Pricing />
-          <Contact />
+          {renderPage()}
         </main>
 
         <Footer />
