@@ -5,7 +5,6 @@ import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { ClientCategories } from './components/ClientCategories'
 import { Services } from './components/Services'
-import { Benefits } from './components/Benefits'
 import { Portfolio } from './components/Portfolio'
 import { Process } from './components/Process'
 import { About } from './components/About'
@@ -45,7 +44,7 @@ function App() {
   const renderPage = () => {
     switch (route) {
       case '/layanan':
-        return <><Services /><Benefits /></>
+        return <Services />
       case '/portofolio':
         return <Portfolio />
       case '/proses':
